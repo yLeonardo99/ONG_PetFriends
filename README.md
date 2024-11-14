@@ -46,11 +46,13 @@ Este projeto, desenvolvido por alunos da Uninove campos ('Vila Prudente'), visa 
 
 ## 🖼️ Imagens do Projeto 
 
-![Página Home](#)
+![Página Home](https://raw.githubusercontent.com/yLeonardo99/ONG_PetFriends/main/images/Capa-Readme/Home.png)
 
-![Página Como Ajudar](#)
+![Página História da ONG](https://raw.githubusercontent.com/yLeonardo99/ONG_PetFriends/main/images/Capa-Readme/Hist%C3%B3ria.png)
 
-![Página História da ONG](#)
+![Página Por que Adotar?](https://raw.githubusercontent.com/yLeonardo99/ONG_PetFriends/main/images/Capa-Readme/Por%20Que%20Adotar.png)
+
+![Página Desenvolvedores](https://raw.githubusercontent.com/yLeonardo99/ONG_PetFriends/main/images/Capa-Readme/Desenvolvedores.png)
 
 ## 🙏 Como Ajudar 
 
