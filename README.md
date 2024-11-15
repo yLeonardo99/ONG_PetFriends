@@ -11,8 +11,9 @@ Este projeto, desenvolvido por alunos da Uninove campos ('Vila Prudente'), visa 
 
 ## 🌐 Links 
 
-- **🔗 [Acessar o Site](\\3)**  
-- **🔴📹 [Apresentação do Site no YouTube](#)**
+- **🔗 [Acessar o Site](https://yleonardo99.github.io/ONG_PetFriends/)**
+
+- **🔴📹 [Apresentação do Site no YouTube](https://www.youtube.com/watch?v=il93bzMIr_s&t=325s)**
 
 ## 🏆 Equipe Desenvolvedora
 
