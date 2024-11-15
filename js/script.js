@@ -1,7 +1,9 @@
 "use strict";
 (function () {
+	
 	// Global variables
-	var userAgent = navigator.userAgent.toLowerCase(),
+
+	let userAgent = navigator.userAgent.toLowerCase(),
 		initialDate = new Date(),
 
 		$document = $(document),
@@ -29,6 +31,7 @@
 		};
 
 	// Initialize scripts that require a loaded page
+
 	$window.on('load', function () {
 		// Page loader & Page transition
 		if (plugins.preloader.length && !isNoviBuilder) {
@@ -55,12 +58,13 @@
 		}
 
 		// Material Parallax
+
 		if ( plugins.materialParallax.length ) {
 			if ( !isNoviBuilder && !isIE && !isMobile) {
 				plugins.materialParallax.parallax();
 			} else {
-				for ( var i = 0; i < plugins.materialParallax.length; i++ ) {
-					var $parallax = $(plugins.materialParallax[i]);
+				for ( let i = 0; i < plugins.materialParallax.length; i++ ) {
+					let $parallax = $(plugins.materialParallax[i]);
 
 					$parallax.addClass( 'parallax-disabled' );
 					$parallax.css({ "background-image": 'url('+ $parallax.data("parallax-img") +')' });
@@ -69,16 +73,19 @@
 		}
 	});
 
-	// Initialize scripts that require a finished document
+	// Inicialize scripts que requerem um documento finalizado.
+
 	$(function () {
 		isNoviBuilder = window.xMode;
 
 		/**
-		 * @desc Attach form validation to elements
-		 * @param {object} elements - jQuery object
+		 * @desc 
+		 * @param {object} elements - 
 		 */
 		function attachFormValidator(elements) {
+
 			// Custom validator - phone number
+
 			regula.custom({
 				name: 'PhoneNumber',
 				defaultMessage: 'Invalid phone number format',
@@ -88,15 +95,15 @@
 				}
 			});
 
-			for (var i = 0; i < elements.length; i++) {
-				var o = $(elements[i]), v;
+			for (let i = 0; i < elements.length; i++) {
+				let o = $(elements[i]), v;
 				o.addClass("form-control-has-validation").after("<span class='form-validation'></span>");
 				v = o.parent().find(".form-validation");
 				if (v.is(":last-child")) o.addClass("form-control-last-child");
 			}
 
 			elements.on('input change propertychange blur', function (e) {
-				var $this = $(this), results;
+				let $this = $(this), results;
 
 				if (e.type !== "blur") if (!$this.parent().hasClass("has-error")) return;
 				if ($this.parents('.rd-mailform').hasClass('success')) return;
@@ -110,28 +117,28 @@
 				}
 			}).regula('bind');
 
-			var regularConstraintsMessages = [
+			let regularConstraintsMessages = [
 				{
 					type: regula.Constraint.Required,
-					newMessage: "The text field is required."
+					newMessage: "O Campo de texto é obrigatório."
 				},
 				{
 					type: regula.Constraint.Email,
-					newMessage: "The email is not a valid email."
+					newMessage: "O Campo e-mail é obrigatório."
 				},
 				{
 					type: regula.Constraint.Numeric,
-					newMessage: "Only numbers are required"
+					newMessage: "Apenas números são permitidos."
 				},
 				{
 					type: regula.Constraint.Selected,
-					newMessage: "Please choose an option."
+					newMessage: "Por favor escolha uma opção."
 				}
 			];
 
 
-			for (var i = 0; i < regularConstraintsMessages.length; i++) {
-				var regularConstraint = regularConstraintsMessages[i];
+			for (let i = 0; i < regularConstraintsMessages.length; i++) {
+				let regularConstraint = regularConstraintsMessages[i];
 
 				regula.override({
 					constraintType: regularConstraint.type,
@@ -141,18 +148,18 @@
 		}
 
 		/**
-		 * @desc Check if all elements pass validation
-		 * @param {object} elements - object of items for validation
-		 * @param {object} captcha - captcha object for validation
+		 * @desc 
+		 * @param {object} elements
+		 * @param {object} captcha 
 		 * @return {boolean}
 		 */
 		function isValidated(elements, captcha) {
-			var results, errors = 0;
+			let results, errors = 0;
 
 			if (elements.length) {
-				for (var j = 0; j < elements.length; j++) {
+				for (let j = 0; j < elements.length; j++) {
 
-					var $input = $(elements[j]);
+					let $input = $(elements[j]);
 					if ((results = $input.regula('validate')).length) {
 						for (k = 0; k < results.length; k++) {
 							errors++;
@@ -175,7 +182,7 @@
 		}
 
 		/**
-		 * @desc Initialize Bootstrap tooltip with required placement
+		 * @desc  inicia o Bootstrap  tooltip with required placement
 		 * @param {string} tooltipPlacement
 		 */
 		function initBootstrapTooltip(tooltipPlacement) {
@@ -202,8 +209,9 @@
 		}
 
 		// Bootstrap Tooltips
+
 		if (plugins.bootstrapTooltip.length) {
-			var tooltipPlacement = plugins.bootstrapTooltip.attr('data-placement');
+			let tooltipPlacement = plugins.bootstrapTooltip.attr('data-placement');
 			initBootstrapTooltip(tooltipPlacement);
 
 			$window.on('resize orientationchange', function () {
@@ -212,11 +220,13 @@
 		}
 
 		// Copyright Year (Evaluates correct copyright year)
+
 		if (plugins.copyrightYear.length) {
 			plugins.copyrightYear.text(initialDate.getFullYear());
 		}
 
 		// UI To Top
+
 		if (isDesktop && !isNoviBuilder) {
 			$().UItoTop({
 				easingType: 'easeOutQuad',
@@ -225,8 +235,9 @@
 		}
 
 		// RD Navbar
+
 		if (plugins.rdNavbar.length) {
-			var aliaces, i, j, len, value, values, responsiveNavbar;
+			let aliaces, i, j, len, value, values, responsiveNavbar;
 
 			aliaces = ["-", "-sm-", "-md-", "-lg-", "-xl-", "-xxl-"];
 			values = [0, 576, 768, 992, 1200, 1600];
@@ -268,7 +279,7 @@
 				responsive: responsiveNavbar,
 				callbacks: {
 					onStuck: function () {
-						var navbarSearch = this.$element.find('.rd-search input');
+						let navbarSearch = this.$element.find('.rd-search input');
 
 						if (navbarSearch) {
 							navbarSearch.val('').trigger('propertychange');
@@ -281,7 +292,7 @@
 						if (this.$clone === null)
 							return;
 
-						var navbarSearch = this.$clone.find('.rd-search input');
+						let navbarSearch = this.$clone.find('.rd-search input');
 
 						if (navbarSearch) {
 							navbarSearch.val('').trigger('propertychange');
@@ -299,23 +310,27 @@
 		}
 
 		// WOW
+
 		if ($html.hasClass("wow-animation") && plugins.wow.length && !isNoviBuilder && isDesktop) {
 			new WOW().init();
 		}
 
 		// RD Input Label
+
 		if (plugins.rdInputLabel.length) {
 			plugins.rdInputLabel.RDInputLabel();
 		}
 
 		// Regula
+
 		if (plugins.regula.length) {
 			attachFormValidator(plugins.regula);
 		}
 
 		// RD Mailform
+
 		if (plugins.rdMailForm.length) {
-			var i, j, k,
+			let i, j, k,
 				msg = {
 					'MF000': 'Successfully sent!',
 					'MF001': 'Recipients are not set!',
@@ -327,7 +342,7 @@
 				};
 
 			for (i = 0; i < plugins.rdMailForm.length; i++) {
-				var $form = $(plugins.rdMailForm[i]),
+				let $form = $(plugins.rdMailForm[i]),
 					formHasCaptcha = false;
 
 				$form.attr('novalidate', 'novalidate').ajaxForm({
@@ -339,7 +354,7 @@
 						if (isNoviBuilder)
 							return;
 
-						var form = $(plugins.rdMailForm[this.extraData.counter]),
+						let form = $(plugins.rdMailForm[this.extraData.counter]),
 							inputs = form.find("[data-constraints]"),
 							output = $("#" + form.attr("data-form-output")),
 							captcha = form.find('.recaptcha'),
@@ -351,7 +366,7 @@
 
 							// veify reCaptcha
 							if (captcha.length) {
-								var captchaToken = captcha.find('.g-recaptcha-response').val(),
+								let captchaToken = captcha.find('.g-recaptcha-response').val(),
 									captchaMsg = {
 										'CPT001': 'Please, setup you "site key" and "secret key" of reCaptcha',
 										'CPT002': 'Something wrong with google reCaptcha'
@@ -402,7 +417,7 @@
 						if (isNoviBuilder)
 							return;
 
-						var output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
+						let output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
 							form = $(plugins.rdMailForm[this.extraData.counter]);
 
 						output.text(msg[result]);
@@ -416,7 +431,7 @@
 						if (isNoviBuilder)
 							return;
 
-						var form = $(plugins.rdMailForm[this.extraData.counter]),
+						let form = $(plugins.rdMailForm[this.extraData.counter]),
 							output = $("#" + form.attr("data-form-output")),
 							select = form.find('select');
 
@@ -463,6 +478,7 @@
 		}
 
 		// parallax scroll
+
 		if($('[data-parallax-scroll]').length && !isNoviBuilder && !isMobile){
 			ParallaxScroll.init();
 		}
@@ -476,38 +492,37 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         const counters = document.querySelectorAll('.count');
-        let animated = false; // Para evitar múltiplas animações
+        let animated = false; 
 
         function countUp(element, target) {
             let count = 0;
-            const increment = Math.ceil(target / 100); // velocidade da animação
-
+            const increment = Math.ceil(target / 100); 
             const interval = setInterval(() => {
                 count += increment;
                 if (count >= target) {
-                    count = target; // Garante que não exceda o alvo
+                    count = target; 
                     clearInterval(interval);
                 }
-                element.textContent = `+${count} ${element.textContent.split(" ")[1]}`; // Atualiza o texto
-            }, 20); // Ajuste a velocidade da animação aqui (em milissegundos)
+                element.textContent = `+${count} ${element.textContent.split(" ")[1]}`;
+            }, 20); 
         }
 
         function onScroll() {
-            if (animated) return; // Previne animações repetidas
-            const section = document.querySelector('.section-lg'); // Alvo da seção
+            if (animated) return; 
+            const section = document.querySelector('.section-lg');
 
             if (section.getBoundingClientRect().top < window.innerHeight) {
                 counters.forEach(counter => {
                     const target = parseInt(counter.getAttribute('data-target'), 10);
                     countUp(counter, target);
                 });
-                animated = true; // Define como animado
-                window.removeEventListener('scroll', onScroll); // Remove o ouvinte para evitar chamadas repetidas
+                animated = true; 
+                window.removeEventListener('scroll', onScroll); 
             }
         }
 
-        window.addEventListener('scroll', onScroll); // Adiciona o ouvinte de rolagem
-        onScroll(); // Chama a função uma vez ao carregar para checar se a seção já está visível
+        window.addEventListener('scroll', onScroll); 
+        onScroll(); 
     });
 
 

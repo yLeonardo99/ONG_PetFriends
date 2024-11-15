@@ -1,11 +1,14 @@
-@charset "UTF-8";
 
 /*
-* Pet Friends - Projeto Desenvolvido na Uninove campos V.Prudente
+* Pet Friends - Projeto Desenvolvido na Uninove campos V.Prudente -2024
 */
 /*
 * Contexts
 */
+
+
+@charset "UTF-8";
+
 .post-corporate.post-corporate-img-bg,
 .section-main-bunner,
 .context-dark,
@@ -3446,7 +3449,8 @@ ul.blog-post-meta li .icon {
 }
 
 /*
-* Quotes
+* 
+Citações
 */
 .quote-primary-mark {
 	position: relative;
@@ -3622,7 +3626,8 @@ ul.blog-post-meta li .icon {
 }
 
 /*
-* Pagination custom
+* 
+Paginação personalizada
 */
 .pagination {
 	font-size: 0;
@@ -3787,7 +3792,7 @@ ul.blog-post-meta li .icon {
 }
 
 /*
-* Footers
+* Rodapés
 */
 .footer-classic {
 	padding: 90px 0;
@@ -4024,7 +4029,7 @@ ul.blog-post-meta li .icon {
 	color: #7FBC4E;
 }
 
-/** @section Banner */
+/** @seção Banner */
 .section-banner {
 	display: flex;
 	align-items: center;
@@ -4039,7 +4044,7 @@ ul.blog-post-meta li .icon {
 }
 
 /*
-* Page layout
+* Layout da página
 */
 .page {
 	position: relative;
@@ -4098,7 +4103,8 @@ html.boxed body {
 }
 
 /*
-* Text styling
+*
+Estilo de texto
 */
 .text-italic {
 	font-style: italic;
@@ -4226,7 +4232,7 @@ html.boxed body {
 }
 
 /*
-* Offsets
+* Deslocamento
 */
 *+p {
 	margin-top: 15px;
@@ -5030,7 +5036,7 @@ html [class*='section-'].section-bottom-0 {
 }
 
 /*
-* Grid modules
+* Módulos de grade
 */
 .grid-demo {
 	letter-spacing: 0;
@@ -7556,6 +7562,7 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 }
 
 /* Index - Entre em contato para mais informações */
+
 .instagram {
 	fill: #cc39a4;
 }
@@ -7580,12 +7587,10 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 	cursor: pointer;
 	scale: 1.1;
 	background-color: write;
-	/* O círculo fica branco */
 }
 
 .Link__facebook:hover .facebook {
 	fill: #3b5998;
-	/* O "F" permanece azul */
 }
 
 
@@ -7594,38 +7599,27 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 .team-classic-figure {
 	position: relative;
 	cursor: pointer;
-	/* Altera o cursor para pointer */
 }
 
 .modal {
 	display: none;
-	/* Inicialmente escondido */
 	position: fixed;
 	z-index: 999;
-	/* Camada superior */
 	padding-top: 100px;
-	/* Espaço do topo */
 	left: 0;
 	top: 0;
 	width: 100%;
-	/* Ocupa a tela inteira */
 	height: 100%;
 	overflow: auto;
-	/* Permite rolagem */
 	background-color: rgba(0, 0, 0, 0.9);
-	/* Fundo escuro */
 }
 
 .modal-content {
 	margin: auto;
 	display: block;
-	/* Mostra a imagem */
 	width: 90%;
-	/* Largura ajustada */
 	max-width: 700px;
-	/* Máxima largura da imagem */
 	height: auto;
-	/* Altura automática */
 }
 
 .close {
@@ -7634,7 +7628,6 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 	right: 35px;
 	color: #f1f1f1;
 	font-size: 40px;
-	/* Tamanho do botão */
 	font-weight: bold;
 	transition: 0.3s;
 }
@@ -7642,26 +7635,19 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 .close:hover,
 .close:focus {
 	color: #bbb;
-	/* Cor ao passar o mouse */
 	text-decoration: none;
 	cursor: pointer;
-	/* Cursor de pointer */
 }
 
-/* Media Queries para responsividade */
 @media (max-width: 768px) {
 	.modal-content {
 		width: 95%;
-		/* Aumenta a largura em telas menores */
 		max-width: 95%;
-		/* Limite em telas menores */
 	}
 
 	.close {
 		font-size: 30px;
-		/* Reduz tamanho do botão de fechar */
 		top: 10px;
-		/* Ajusta posição do botão de fechar */
 		right: 20px;
 	}
 }
@@ -7669,14 +7655,11 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 @media (max-width: 480px) {
 	.modal-content {
 		width: 100%;
-		/* Largura total em telas muito pequenas */
 	}
 
 	.close {
 		font-size: 24px;
-		/* Tamanho menor para o botão de fechar */
 		top: 5px;
-		/* Ajusta a posição do botão de fechar */
 		right: 15px;
 	}
 }
@@ -7713,7 +7696,6 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 
 .custom-footer-copyright {
 	font-size: 18px;
-	/* Aumenta o tamanho da fonte */
 	color: white;
 }
 
@@ -7724,7 +7706,7 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 	color: white;
 	font-size: 17px;
 	margin-left: -20%;
-	/* Ajuste para mover o texto mais para a esquerda */
+	
 }
 
 .custom-footer-right {
